@@ -5,7 +5,7 @@ body {
     margin: 0;
     background: #ffffff; /* default background */
     color: #000;
-    font-family: 'Roboto', sans-serif; /* change here to affect all pages */
+    font-family: 'Roboto', sans-serif; /* site-wide font */
 }
 
 /* Navigation bar */
@@ -26,6 +26,12 @@ body {
     text-decoration: none;
     margin-left: 20px;
     font-size: 16px;
+}
+
+.nav-right a.active {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #e63946; /* highlight color */
 }
 
 .nav-right a:hover {
@@ -57,6 +63,106 @@ hr {
     margin: 30px 0;
 }
 
+/* Hero section (for About page) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 40px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero-text h2 {
+    font-size: 22px;
+    font-weight: 300;
+    color: black;
+}
+
+.hero-text p {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Placeholder photo */
+.photo {
+    width: 260px;
+    height: 320px;
+    background-color: #dddddd;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 12px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 14px 26px;
+    margin-right: 15px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #78b4cf;
+    font-weight: 1000;
+    color: black;
+}
+
+.btn-secondary {
+    background-color: #78b4cf;
+    border: 2px solid black;
+    font-weight: 1000;
+    color: black;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Pillars section */
+.pillars {
+    display: flex;
+    gap: 30px;
+}
+
+.pillar {
+    background-color: #78b4cf;
+    padding: 30px;
+    border-radius: 20px;
+    width: 30%;
+}
+
+.pillar h4 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #ffd166;
+}
+
+.pillar p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 /* CV-specific styles */
 .cv-section {
     margin-bottom: 40px;
@@ -75,4 +181,30 @@ hr {
 .cv-entry .duration {
     font-style: italic;
     color: #555;
+}
+
+/* Collapsible CV sections */
+.collapsible {
+    background-color: #f1f1f1;
+    color: black;
+    cursor: pointer;
+    padding: 12px 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.active-collapsible {
+    background-color: #ccc;
+}
+
+.collapsible-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #fafafa;
+    margin-bottom: 15px;
 }
