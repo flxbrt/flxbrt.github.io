@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Felix Ebert – CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="nav-left">Felix Ebert</div>
+        <div class="nav-right">
+            <a href="index.html">About</a>
+            <a href="cv.html" class="active">CV</a>
+            <a href="ascent.html">ASCENT</a>
+            <a href="projects.html">Projects</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main CV section -->
+    <div class="section">
+        <h3>Curriculum Vitae</h3>
+
+        <!-- Education -->
+        <button type="button" class="collapsible">Education</button>
+        <div class="collapsible-content">
+            <div class="cv-entry">
+                <div class="title">PhD in Rocketry & Control, TU Munich</div>
+                <div class="duration">2023 – Present</div>
+            </div>
+            <div class="cv-entry">
+                <div class="title">MSc in Mechanical Engineering, ETH Zurich</div>
+                <div class="duration">2021 – 2023</div>
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <button type="button" class="collapsible">Work Experience</button>
+        <div class="collapsible-content">
+            <div class="cv-entry">
+                <div class="title">Research Assistant, Space Mobility Lab</div>
+                <div class="duration">2023 – Present</div>
+            </div>
+            <div class="cv-entry">
+                <div class="title">Intern, Rocket Propulsion Company</div>
+                <div class="duration">Summer 2022</div>
+            </div>
+        </div>
+
+        <!-- Awards & Scholarships -->
+        <button type="button" class="collapsible">Awards & Scholarships</button>
+        <div class="collapsible-content">
+            <div class="cv-entry">
+                <div class="title">Excellence Scholarship, ETH Zurich</div>
+                <div class="duration">2021</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <button type="button" class="collapsible">Skills</button>
+        <div class="collapsible-content">
+            <ul>
+                <li>Python, MATLAB, Simulink</li>
+                <li>Control Theory & Model Predictive Control</li>
+                <li>System Identification & Data Analysis</li>
+            </ul>
+        </div>
+
+        <!-- Publications -->
+        <button type="button" class="collapsible">Publications</button>
+        <div class="collapsible-content">
+            <div class="cv-entry">
+                <div class="title">F. Ebert et al., "Advanced Rocket Control"</div>
+                <div class="duration">2025</div>
+            </div>
+        </div>
+
+        <!-- Extracurricular -->
+        <button type="button" class="collapsible">Extracurricular</button>
+        <div class="collapsible-content">
+            <ul>
+                <li>Mountain running</li>
+                <li>Student mentoring</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 Felix Ebert · GitHub Pages
+    </div>
+
+    <!-- Collapsible JS -->
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active-collapsible");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+    </script>
+
+</body>
+</html>
