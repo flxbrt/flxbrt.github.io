@@ -1,25 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Felix Ebert</title>
+		<title>Felix Ebert - PhD in Rocketry & Control</title>
 		<meta charset="UTF-8">
 		<meta name="description" content="This is my personal website, containing my CV and references and insights to my projects.">
 		<meta name="author" content="Felix Ebert">
 		<!-- Import the CSS -->
 		<link rel="stylesheet" href="style.css">
+		<!-- Font Awesome -->
+		<!--
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		-->
+		<!-- Academicons (Scholar, ResearchGate) -->
+		<!--
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+		-->
+
 	</head>
 	<body>
 		<!-- Navbar -->
+		<!--
+		<div id="navbar-container"></div>
+		
+		<script>
+		fetch("navbar.html")
+		  .then(res => res.text())
+		  .then(html => {
+			document.getElementById("navbar-container").innerHTML = html;
+		  });
+		</script>
+		-->
+		
 		<div id="navbar">
 			<div id="nav-left">
+			
 				<p>Felix Ebert</p>
+				
+				<div id="social-icons">
+
+					<!-- Email -->
+					<a href="mailto:felix.ebert@tum.de" class="icon" target="_blank">
+						<i class="fa-solid fa-envelope"></i>
+					</a>
+					
+					<!-- LinkedIn -->
+					<a href="https://www.linkedin.com/in/felix-ebert-4834a0192/" class="icon" target="_blank">
+						<i class="fa-brands fa-linkedin"></i>
+					</a>
+
+					<!-- GitHub -->
+					<a href="https://github.com/flxbrt" class="icon" target="_blank">
+						<i class="fa-brands fa-github"></i>
+					</a>
+				
+					<!-- Google Scholar -->
+					<!--
+					<a href="https://scholar.google.com/yourid" class="icon" target="_blank">
+						<i class="ai ai-google-scholar-square"></i>
+					</a>
+					-->
+
+					<!-- ResearchGate -->
+					<!--
+					<a href="https://www.researchgate.net/profile/yourname" class="icon" target="_blank">
+						<i class="ai ai-researchgate"></i>
+					</a>
+					-->
+
+					<!-- ORCID (sehr üblich in Academia) -->
+					<!--
+					<a href="https://orcid.org/0000-0000-0000-0000" class="icon" target="_blank">
+						<i class="ai ai-orcid"></i>
+					</a>
+					-->
+
+					<!-- Persönliche Website -->
+					<!--
+					<a href="https://yourwebsite.com" class="icon" target="_blank">
+						<i class="fa-solid fa-globe"></i>
+					</a>
+					-->
+
+				</div>
+
 			</div>
 			<div id="nav-right">
 				<a href="index.html" class="active">Home</a>
 				<a href="cv.html" class="active">CV</a>
 				<a href="#" class="active">ASCENT</a>
 				<a href="#" class="active">Git Projects</a>
-			</div>	
+			</div>
+			
 		</div>
 		
 		<div class="cv">
@@ -912,9 +985,9 @@
 			
 		</div>
 		
-				<!-- Footer -->
-		<div id="footer">
-			© 2025 Felix Ebert · GitHub Pages
+		<!-- Footer -->
+		<div id="footer">		
+			© 2025 Felix Ebert · <a href="mailto:felix.ebert@tum.de" class="active">felix.ebert@tum.de</a> · GitHub Pages
 		</div>
 	
 	<script>
