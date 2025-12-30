@@ -7,21 +7,30 @@
 		<meta name="author" content="Felix Ebert">
 		<!-- Import the CSS -->
 		<link rel="stylesheet" href="style.css">
+		<!-- Font Awesome -->
+		<!--
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		-->
+		<!-- Academicons (Scholar, ResearchGate) -->
+		<!--
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css">
+		-->
+
 	</head>
 	<body>
 		<!-- Navbar -->
-		<div id="navbar">
-			<div id="nav-left">
-				<p>Felix Ebert</p>
-			</div>
-			<div id="nav-right">
-				<a href="index.html" class="active">Home</a>
-				<a href="cv.html" class="active">CV</a>
-				<a href="#" class="active">ASCENT</a>
-				<a href="#" class="active">Git Projects</a>
-			</div>
-			
-		</div>
+		<div id="navbar-container"></div>
+		
+		<script>
+		fetch("navbar.html")
+		  .then(res => res.text())
+		  .then(html => {
+			document.getElementById("navbar-container").innerHTML = html;
+		  });
+		</script>
+
 	
 		<!-- Home / Hero Section -->
 		<div id="hero">
@@ -47,7 +56,7 @@
 					<b>Feel free to reach out!</b>
 				</p>
 				
-				<img src="docs/home_square.png" class="hero-portrait">
+				<img src="docs/home_square.png" id="hero-portrait">
 			</div>
 			
 			<!-- Highlights -->
@@ -95,8 +104,8 @@
 		</div>
 				
 		<!-- Footer -->
-		<div id="footer">
-			© 2025 Felix Ebert · GitHub Pages
+		<div id="footer">		
+			© 2025 Felix Ebert · <a href="mailto:felix.ebert@tum.de" class="active">felix.ebert@tum.de</a> · GitHub Pages
 		</div>
 		
 	</body>

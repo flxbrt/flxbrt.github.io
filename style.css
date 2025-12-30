@@ -1,10 +1,12 @@
 /* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@600&family=Roboto+Mono&family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@import url("https://cdn.jsdelivr.net/npm/academicons/css/academicons.min.css");
 
 /* Defining the color scheme */
 :root {
 	--color-base: #3f545f; /* Navbar / Footer #1f2a44 #2f3e46 */
-	--color-url:  #8c9a91; /* 3fa9f5 #507e9e*/
+	--color-url:  #8c9a91; /* #ff0000 3fa9f5 #507e9e*/
 	--color-accent: #3f545f; /* #ffb703 grau grün #8c9a91 oliv #9caf88 dunkleres grün #95a68d*/
 	--color-text: #000000;
 	--color-text-inv: #ffffff;
@@ -71,20 +73,46 @@ body h4 {
 	}
 
 #nav-left {
+	display: flex; 
 	font-weight: 750;
 	font-size: 1.2em;
+	gap: 30px; /* gap between div elements in nav-left*/
 	}
 	
-#nav-right a.active{
+#nav-right a.active {
 	color: var(--color-text-inv);
 	text-decoration: none;
 	margin-left: 15px;
 	}
+	
+#footer a.active {
+	color: var(--color-text-inv);
+	text-decoration: none;
+	}
 
-#nav-right a:hover {
+#nav-right a:hover,
+#footer a:hover {
 	text-decoration: underline;
 	}
-	
+
+#social-icons {
+	display: flex;
+	gap: 14px;
+}
+
+.icon {
+	font-size: 1.2em;
+	color: var(--color-text-inv);
+	text-decoration: none;
+	transition: color 0.25s ease, transform 0.25s ease;
+	padding: 0;
+}
+
+.icon:hover {
+  transform: translateY(-2px);
+  color: var(--color-accent);
+}
+
 /* Footer */
 #footer {
 	text-align: center;
@@ -106,23 +134,23 @@ body h4 {
 	justify-content: space-between;
 	}
 	
-.hero a.active,
-.cv a.active{
+#hero a.active,
+.cv a.active {
 	color: var(--color-url);
 	text-decoration: none;
 	font-weight: bold;
 	}
 
-.hero a:hover,
+#hero a:hover,
 .cv a:hover {
 	text-decoration: underline;
 	}
 	
-.hero p {
+#hero p {
 	margin: 0;
 	}
 	
-.hero-portrait {
+#hero-portrait {
 	width: 250px;
 	height: 250px;
 	border-radius: 20px;
