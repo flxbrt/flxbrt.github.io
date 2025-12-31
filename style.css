@@ -195,7 +195,7 @@ body h4 {
 
 .cv-left {
 	color: var(--color-text-muted);
-	font-size: 1em;
+	font-size: 0.9em;
 	}
 
 .cv-left .time {
@@ -213,7 +213,11 @@ body h4 {
 
 .cv-right .subtitle{
 	font-style: italic;
-	font-size: 0.8em; 
+	font-size: 0.9em; 
+	}
+
+.cv-right .bulletpoints{
+	font-size: 0.9em; 
 	}
 	
 .toggle-btn {
@@ -226,6 +230,7 @@ body h4 {
     cursor: pointer;
     font-weight: 600;
     /*transition: background-color 0.3s;*/
+	transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .toggle-btn:hover {
@@ -234,7 +239,9 @@ body h4 {
 }
 
 .extra-info {
+	font-size: 0.8em; 
     margin-top: 10px;
+	padding: 0;
     padding-left: 10px;
     border-left: 3px solid var(--color-accent);
 }
