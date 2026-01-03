@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Felix Ebert</title>
+		<link rel="icon" type="svg" href="assets/favicon.svg">
 		<meta charset="UTF-8">
 		<meta name="description" content="This is my personal website, containing my CV and references and insights to my projects.">
 		<meta name="author" content="Felix Ebert">
@@ -89,8 +90,10 @@
 			<div id="nav-right">
 				<a href="index.html" class="active">Home</a>
 				<a href="cv.html" class="active">CV</a>
-				<a href="#" class="active">ASCENT</a>
+				<a href="ascent.html" class="active">ASCENT</a>
+				<!--
 				<a href="#" class="active">Git Projects</a>
+				-->
 			</div>
 			
 		</div>
@@ -117,7 +120,9 @@
 						Chair of Space Mobility and Propulsion – Technical University of Munich
 					</div>
                     <div class="subtitle">
-						Advisor: Prof. Dr.–Ing. Chiara Manfletti
+						Advisor: <a href="https://www.professoren.tum.de/en/manfletti-chiara" 
+						class="active">Prof. Dr.-Ing. Chiara Manfletti
+					</a>
 					</div>
 					<div class="bulletpoints">
 						<ul>
@@ -181,7 +186,7 @@
 					</div>
 					<div class="bulletpoints">
 						<ul>
-							<li>Implemented <b>nonlinear time-optimal MPC</b> for overhead crane using FATROP solver</li>
+							<li>Implemented <b>nonlinear time-optimal MPC</b> for overhead cranes using FATROP solver</li>
 							<li>Extended controller with <b>collision avoidance</b> using higher-order control barrier functions</li>
 							<li>Achieved near free-time optimal performance on laboratory overhead crane setup</li>
 						</ul>
@@ -277,7 +282,7 @@
 						Bachelor's Thesis: <i>3D-CFD Geometry- and Flow-Field Analysis of a Centrifugal Compressor Database Using Correlation Functions</i>
 						<ul>
 							<li>Developed a <b>Python-based analysis tool</b> to correlate local CFD flow-field data with global performance metrics</li>
-							<li>Enabled identification of regions with high sensitivity to efficiency changes</li>
+							<li>Enabled identification of regions with high sensitivity to efficiency changes and other performance metrics</li>
 							<li>Addressed challenges related to large CFD data sets through flexible mesh decomposition strategies</li> 
 						</ul>
 					</div>
@@ -304,8 +309,8 @@
 					</div>
 					<div class="bulletpoints">
 						<ul>
-							<li>Classified and quantified compressor blade manufacturing deviations using self.developed Python tool</li>
-							<li>Assessed aerodynamic impact of manufacturing deviations on the copmressor stage using in-house 2D CFD</li>
+							<li>Classified and quantified compressor blade manufacturing deviations using self-developed Python tool</li>
+							<li>Assessed aerodynamic impact of manufacturing deviations on the copmressor stage using in-house 2D CFD tool</li>
 						</ul>
 					</div>
                 </div>
@@ -330,7 +335,7 @@
 						Authors: Ebert F., Manfletti C.
 					</div>
 					<div class="subtitle">
-						International Astronautical Congres
+						International Astronautical Congress
 					</div>
 					<button class="toggle-btn" data-label="Abstract" onclick="toggleInfo(this)">Abstract ▾</button>
 					<div class="extra-info" style="display: none;">
@@ -346,27 +351,6 @@
 							determination of pressure losses between the propellant tanks and the thrust chamber significantly impacts the mass of
 							the entire system and should neither be under- nor over-predicted.
 						</p>
-					</div>
-				</div>
-            </div>
-			
-			<!-- SYSCOP -->
-			<div class="cv-entry">
-                <div class="cv-left">
-                    <div class="time">
-						January 2025
-					</div>
-					<div class="place">
-						Freiburg im Breisgau, Germany
-					</div>
-                </div>
-                <div class="cv-right">
-					<h4>Modelling the Landing Phase of a Rocket</h4>
-					<div class="subtitle">
-						Presenters: Felix Ebert, Lukas Pries
-					</div>
-					<div class="subtitle">
-						Systems Control and Optimization Laboratory – University of Freiburg
 					</div>
 				</div>
             </div>
@@ -388,6 +372,27 @@
 					</div>
 					<div class="subtitle">
 						MECO Research Lab – Katholieke Universiteit Leuven
+					</div>
+				</div>
+            </div>
+			
+			<!-- SYSCOP -->
+			<div class="cv-entry">
+                <div class="cv-left">
+                    <div class="time">
+						January 2025
+					</div>
+					<div class="place">
+						Freiburg im Breisgau, Germany
+					</div>
+                </div>
+                <div class="cv-right">
+					<h4>Modelling the Landing Phase of a Rocket</h4>
+					<div class="subtitle">
+						Presenters: Felix Ebert, Lukas Pries
+					</div>
+					<div class="subtitle">
+						Systems Control and Optimization Laboratory – University of Freiburg
 					</div>
 				</div>
             </div>
@@ -442,7 +447,7 @@
 					</div>
                 </div>
                 <div class="cv-right">
-                    <h4>Water Electrolysis Propulsion in Cubesat: A Case Study</h4>
+                    <h4>Water Electrolysis Propulsion in Cubesats: A Case Study</h4>
 					<div class="subtitle">
 						Authors: Dengler S., Ebert F., Manfletti C.
 					</div>
@@ -512,7 +517,7 @@
 					<div class="bulletpoints">
 						<ul>
 							<li>Supervised and mentored <b>65+ BSc and MSc students and groups</b> on research and engineering theses</li>
-							<li>Topics included fault detection and identification, fault-tolerant control, state estimation, and design of rocket subsystems</li>
+							<li>Topics included motion planning/guidance, fault detection and identification, fault-tolerant control, state estimation, and design and testing of rocket subsystems</li>
 							<li>Guided students through open-ended problems, from requirement definition to functional and documented deliverables</li>
 						</ul>
 					</div>
@@ -989,7 +994,7 @@
             <div class="cv-entry">
                 <div class="cv-left">
                     <div class="time">
-						???2023 - 2024???
+						Summer 2023 - Summer 2024
 					</div>
 					<div class="place">
 						Munich, Germany
@@ -1026,7 +1031,7 @@
 					<div class="bulletpoints">
 						<ul>
 							<li>Provided challenge on fault-tolerant rocket landing for the trustworthy systems TUM Science Hackathon</li>
-							<li>Supervised three teams Hackathon, of which one team ranked first and another ranked third</li>
+							<li>Supervised three teams during the Hackathon, of which one team ranked first and another ranked third</li>
 						</ul>
 					</div>
 				</div>
@@ -1059,7 +1064,7 @@
 		
 		<!-- Footer -->
 		<div id="footer">		
-			© 2025 Felix Ebert · <a href="mailto:felix.ebert@tum.de" class="active">felix.ebert@tum.de</a> · GitHub Pages
+			© 2026 Felix Ebert · <a href="mailto:felix.ebert@tum.de" class="active">felix.ebert@tum.de</a> · GitHub Pages
 		</div>
 	
 	<!--
