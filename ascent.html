@@ -98,34 +98,187 @@
 			
 		</div>
 	
-		<!-- Home / Hero Section -->
-		<div id="hero">
+		<!-- Description and Goal -->
+		<div id="ascent">
 			
 			<h1>ASCENT</h1>
 			<h2><b>A</b>utonomou<b>S</b> <b>C</b>ontrol and <b>EN</b>gine <b>T</b>echnology Platform</h2>
 
-			<div id="hero-section">			
+			<div id="ascent-goal-section">			
 				<p>
-					I am a PhD student at the 
-					<a href="https://www.asg.ed.tum.de/en/spm/homepage/" 
-						class="active">Chair of Space Mobility and Propulsion (SMP)
-					</a> under the supervision of 
-					<a href="https://www.professoren.tum.de/en/manfletti-chiara" 
-						class="active">Prof. Dr.-Ing. Chiara Manfletti
-					</a>
-					. My research lies at the intersection of <b>rocketry</b> and 
-					<b>control</b> and on robust and fault-tolerant control 
-					architectures for rocket propulsion systems, with an emphasis on 
-					<b>bringing advanced control methods from theory into real-world 
-					flight and test-bench applications</b>.
-					<br>
-					<b>Feel free to reach out!</b>
+					The chair of Space Mobility and Propulsion launched the ASCENT project in 2024. ASCENT is 
+					a free-flying, vertical-takeoff, vertical landing platform 
+					propelled by a ~3kN hot gas propulsion system. ASCENT aims to bridge the gap between 
+					academic and applied research and technology development. In particular, we want to demonstrate our
+					fault tolerant control strategies on a fully integrated propulsive landing vehicle.  
 				</p>
-				
 				<img src="assets/mission_patch_bw.png" id="ascent-logo">
 			</div>
 			
-			<!-- Highlights -->
+			<div class="ascent-section">
+				<div class="ascent-description">
+					<h3>System Design</h3>
+					<p>
+						I started this project on a blank sheet of paper. One of the challenges I faced during this project is 
+						uncertainty within the design process. 
+						Starting this project on a blank-sheet of paper gave me the opportunity to develop the design process freely. 
+						I choose to implement a model-based system design tool in Python. I did so because I was expecting many changes and 
+						small adaptions to happen during the lifetime of the project, because of initial assumptions made that need to be 
+						monitored and continously updated or potentially design changes that need to be made. Implementing a tool that 
+						automatically computes a feasible overall system design, accounting for all relevant subsystems - such as propulsion, 
+						tanks, structure, avionics etc. - is very helpful. Further, what such as tool allows is run sensitivity studies 
+						in the early phase. This helps to identify the big levers that determine the overall system mass. 
+						This idea led to the HopIt tool. I implements a model-based design routine. Given a set of input configuration parameters,
+						such as the intended flight-time, propellant of choice, oxidizer fuel ratio etc. it computes the most relevant system
+						sepcifications, such as 
+						Since all subsystems are interrelated (for instance a heavier tank, requires an engine with more thrust, wich requires 
+						more propellant which in turn will require larger and more heavy tanks), this constitues an implicit problem. I solve this in 
+						two different ways: Either, via a fixed point iteration, if external tools such as cantera or coolprop have to called
+						during the iterative solve or via a newton type root finding method. 
+						Overall, this tool helpe me to better understand, which design parameters are most relevant
+						to minimize overall system mass and to derive requirements for the subsequent component development process. 					
+						This design approach alongside with some insights into the results went into a publication. 
+						The HopIt tool allowed me to compare different engines cycles and propellant combinations and find a design that minimizes system
+						mass while understanding the main sensitivities.
+						<!--
+						Started on a blank sheet of paper
+						requirements derivation
+						Implemented design tool -> HopIt
+						THERMAT
+						sensitivity studies to understand main 
+						central metri is mass of the hopper
+						-->
+					</p>
+				</div>
+				<img src="assets/of.svg" class="ascent-footage">
+			</div>
+			
+			<div class="ascent-section">
+				<img src="assets/thermat.png" class="ascent-footage">
+				<div class="ascent-description">
+					<h3>Thermal Constraints</h3>
+					<p> 
+						A central boundary condition for the system design is the feasible oxidizer-to-fuel ratio. Combustion temperatures
+						within the combustion chamber of the rocket engine can be as high 3000K or more, far above the melting point
+						of typical alloys. To avoid using high-temperature and very expensive special allows, I decided to implement
+						regenerative cooling. Regenerative cooling usually uses one of the propellants - in our case the fuel - 
+						and guides this propellant through the wall of the combustion chamber, thereby acting as a heat exchanger, pickung 
+						up heat and avoiding that the combustion chamber melts. However there are two limits. For one, the collant must provide
+						a sufficient heat capacity to pick up the heat entering the combustion chamber wall, which in turn depends on 
+						the geometry of the thrust chamber and the combustion conditions. Also, the locally the wall temperature varies a lot
+						since the local heat transfer varies a lot, mostly depending on the hot gas velocity profile within the combustion chamber.
+						In order to find the feasible oxidizer-to-fuel ratio while accounting for all those aspects I implemented the THERMAT tool. 
+						It computes the wall and coolant temperature along the axial coordinate of the thrust chamber and therefore significantly helps me 
+						in the system and thrust chamber component design. 
+					</p>
+				</div>
+			</div>
+			
+			<div class="ascent-section">
+				<div class="ascent-description">
+					<h3>GNC Demonstrator</h3>
+					<p> 
+						Operating the ASCENT Hopper requires a powerful, modular and reliable GNC avionics stack. The eHopper 
+						is the propeller driven low-cost subscale answer to that. It weighs around 1.2kg and is designed to mimic 
+						the dynamic behaviour of ASCENT based on Buckingham-Pi theory. Ever more important than that, it allows us to 
+						test and reiterate the GNC Hardware and Software stack that will later be used on the ASCENT Hopper. 
+						Operation of the eHopper is a lot less ressource intensive and less safety critical. Hence buggs can be fixed
+						here a lot more easy. 
+						The hardware stack is centered around a Pi5 acting as companion and a Pixhawk acting as state estimation device 
+						and interface to all actors and sensors. 
+						<!-- Philippe -->
+					</p>
+				</div>
+				<img src="assets/ehopper.png" class="ascent-footage">
+			</div>
+			
+			<div class="ascent-section">
+				<video
+					src="assets/trajectory.mp4"
+					autoplay
+					muted
+					loop
+					playsinline
+					class="ascent-footage">
+				</video>
+				<div class="ascent-description">
+					<h3>Flight Control</h3>
+				
+					<p> 
+						The Hopper can be thought of as an inverted pendulum that need to be stabilized, but in two rotational degrees at once. 
+						Further, a rotary motion induces a longitudional motion, shoing the couling of its states. Hence, any trjeactory needs to be
+						well planned in order to stabilize the Hopper while reaching the goal given the coupling of the states and the underactuation 
+						of the system. We decided to break this problen into two pieces: A motion planning problem and a tracking problem. 
+						The motion planning problem formulates the trajectory generation as an NLP (implemented in CasADi), thereby taking into account the physical limits
+						of the system. Further, it implements the dynamics in a differentially flat way. 
+						A special thanks goes to <a href="https://jonarriza96.github.io/" 
+						class="active">Jon Arrizabalaga</a>. He was the lead supervisor for the students developing the planner and 
+						tracker. 
+					</p>
+				</div>
+			</div>
+			
+			<div class="ascent-section">
+				<div class="ascent-description">
+					<h3>Thrust Vector Control System</h3>
+					<p> 
+						The flight control algorithm provides the logic to make the ASCENT Hopper fly trajectories, i.e. it computes reference thrust commmands,
+						the thrust vector control system adjusts the thrust vector accordingly. It features a central bearing which allows the required 
+						two degrees of freedom. Two linear actors are working perpedicular to each other to gimbal the engine in less than 0.5s between the 
+						maximum deflection positions. This allows the Hopper to fly agile trajectories and stabilize constant hover flights. 
+					</p>
+				</div>
+				<img src="assets/tvc.png" class="ascent-footage">
+			</div>
+			
+			<div class="ascent-section">
+				<img src="assets/valve.png" class="ascent-footage">
+				<div class="ascent-description">
+					<h3>Throttling Valves</h3>
+					<p> 
+						Not only the thrust vector needs to be adjusted but also the thrust magnitude, to allow for precise
+						trajcetory tracking and soft touchdown. The thrust of a rocket engine is determined by the mass flow that
+						enters the main combustion chamber. We decided to use throttling valves in the main feed lines to regulate
+						the propellant flows independently. This allows to adjust the thrust magnitude, while regulating the oxidizer to fuel
+						ratio to stay within the safe and feasible operational envelope of the engine. 
+						Commercial of the shelf electronically controlled regulating valves were not available for this application. 
+						Hence we decided to buy manually operated regulating valves and augment them by a BLDC motor, to give them the control
+						authority at the bandwidth required. The valves will arrive soon and will subsequeently be commishioned. 
+					</p>
+				</div>
+			</div>
+			
+			<div class="ascent-section">
+				<div class="ascent-description">
+					<h3>Injector</h3>
+					<p> 
+						The system analysed showed that a thrust from 40 - 100% would be required to fly the anticipated trajectories. 
+						The Pintle injector is well known to work reliably and with considerable high combustion efficiency, even at 
+						low load points. Based on a preliminary design developed in a student thesis, I designed the pintle injector 
+						and the thrust chamber baseed on the PINJEC Python tool, developed by me. The tool allows to tune injection conditions
+						and analyse the impact of manufacturing deviations on the mass flow distribution upon injection. The Pintle design 
+						is optimzed to minimize the impact of manufacturing deviations. 
+						The injector is currently being manufactured and will be cold flow tested towards April 2026. 
+					</p>
+				</div>
+				<img src="assets/injector.png" class="ascent-footage">
+			</div>
+			
+			<div class="ascent-section">
+				<img src="assets/testbench.jpeg" class="ascent-footage">
+				<div class="ascent-description">
+					<h3>Propulsion Test Bench</h3>
+					<p> 
+						Thourough characterisation of the rocket engine is required before it can be integrated into the ASCENT Hopper. 
+						This includes cold flow tests for the flow characterisic evaluation of the injector, going to hot-fire test, 
+						and movind on to throttling and thrust vector control tests. All these capabilities are provided by the croygenic, 
+						bi-liquid propulsion test bench supporting thrusts of up to 4kN and pressure of up to 80bar in the run tanks. I 
+						designed the test bench structure, fluid system and selected the required probes. The assembly and commissioinng is ongoing. 
+						Many thanks goes to our technician who is supporting me with this efforts!
+					</p>
+				</div>
+			</div>
+			<!-- index.html
 			<h3>What motivates and defines me</h3>
 			<div class="hero-highlight">
 				<h4>Pushing the frontiers in research</h4>
@@ -165,7 +318,8 @@
 					working in robotics instead of rocketry! The ASCENT 
 					project allows me to look into heat transfer and other aspects. 
                 </p>
-			</div>			
+			</div>
+			-->
 		
 		</div>
 				
