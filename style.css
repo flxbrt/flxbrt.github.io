@@ -150,6 +150,18 @@ body h4 {
 	justify-content: space-between;
 	}
 	
+#hero-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 0;
+	padding: 0;
+	}
+
+#hero-text h2 {
+	margin-top: 0.3em;
+	}
+	
 #hero a.active,
 .cv a.active,
 .ascent-section a.active {
@@ -173,6 +185,7 @@ body h4 {
 	height: 250px;
 	border-radius: 20px;
 	margin-left: 80px;
+	margin-top: 0.3em;
 	}
 	
 #cv-button {
