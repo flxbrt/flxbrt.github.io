@@ -320,6 +320,130 @@
 
 			<!-- Publications & Invited Talks -->
 			<h3>Publications & Invited Talks</h3>
+
+			<!-- CCTA26 -->
+            <div class="cv-entry">
+                <div class="cv-left">
+                    <div class="time">
+						August 2026
+					</div>
+					<div class="place">
+						Vancouver, Canada
+					</div>
+                </div>
+                <div class="cv-right">
+                    <h4>Reduced-Order Modelling and Convex Model Predictive Control for Rocket Engine Thrust Regulation</h4>
+					<div class="subtitle">
+						Authors: Ebert F., Manfletti C.
+					</div>
+					<div class="subtitle">
+						Conference on Control Technology and Applications (CCTA)
+					</div>
+					<button class="toggle-btn" data-label="Abstract" onclick="toggleInfo(this)">Abstract ▾</button>
+					<div class="extra-info" style="display: none;">
+						<p>
+							Accurate and safe thrust control of rocket engines
+							requires regulating the combustion chamber pressure and
+							oxidizer-to-fuel ratio within strict operational limits. This paper
+							presents a convex successive linear Model Predictive Control
+							(SLMPC) framework for setpoint tracking of these variables
+							in a pressure-fed rocket engine under actuator and state
+							constraints. A lumped parameter dynamic model is derived
+							and subsequently reduced by neglecting fast fluid dynamics.
+							This yields a two-state representation that preserves the dominant
+							engine dynamics while offering reduced computational
+							complexity when employed for MPC. The resulting SLMPC
+							formulation achieves accurate pressure and mixture-ratio control.
+							Simulation results demonstrate that the proposed approach
+							outperforms a conventional PI controller in tracking speed and
+							constraint satisfaction, while closely matching the performance
+							of a nonlinear MPC. The SLMPC requires 6 ms per solve at
+							30 Hz, which is six times faster than the nonlinear MPC.
+						</p>
+					</div>
+				</div>
+            </div>
+
+			<!-- CCTA26 -->
+            <div class="cv-entry">
+                <div class="cv-left">
+                    <div class="time">
+						August 2026
+					</div>
+					<div class="place">
+						Vancouver, Canada
+					</div>
+                </div>
+                <div class="cv-right">
+                    <h4>Safe and Time-Minimal Control for Overhead Cranes based on MPC and Control Barrier Functions</h4>
+					<div class="subtitle">
+						Authors: Ebert F., Florez A., Gonzalez-Garcia A., Manfletti C., Swevers J.
+					</div>
+					<div class="subtitle">
+						Conference on Control Technology and Applications (CCTA)
+					</div>
+					<button class="toggle-btn" data-label="Abstract" onclick="toggleInfo(this)">Abstract ▾</button>
+					<div class="extra-info" style="display: none;">
+						<p>
+							Time-minimal and collision-free motion of overhead
+							cranes is critical in industrial applications with strict
+							productivity and safety requirements. This paper presents a
+							control framework that combines Artificial Reference Model
+							Predictive Control (ARMPC) with a Higher-Order Control
+							Barrier Function (HOCBF) to achieve near time-optimal pointto-
+							point motion with explicit collision avoidance guarantees.
+							The ARMPC formulation enables fixed-horizon optimization
+							suitable for real-time deployment, while the HOCBF enforces
+							safety by ensuring forward invariance of a collision-free set
+							without significantly increasing computational complexity. The
+							approach is tailored to a planar overhead crane system and validated
+							through code generation, simulations, and experimental
+							deployment on a laboratory-scale setup. A comparison with a
+							free-time time-optimal control formulation demonstrates that
+							the proposed method achieves near optimal transfer times with
+							substantially improved real-time feasibility.
+						</p>
+					</div>
+				</div>
+            </div>
+
+			<!-- SPC26 -->
+            <div class="cv-entry">
+                <div class="cv-left">
+                    <div class="time">
+						May 2026
+					</div>
+					<div class="place">
+						Bari, Italy
+					</div>
+                </div>
+                <div class="cv-right">
+                    <h4>Safe Imitation learning for Optimal Thrust Control of Rocket Engines based on Control Barrier Functions</h4>
+					<div class="subtitle">
+						Authors: Ebert F., Manfletti C.
+					</div>
+					<div class="subtitle">
+						Space Propulsion Conference (SPC)
+					</div>
+					<div>
+						<a href="https://doi.org/10.60711/SPC2026.20260609.73037982613171425" class="active" target="_blank">Paper</a>
+					</div>
+					<button class="toggle-btn" data-label="Abstract" onclick="toggleInfo(this)">Abstract ▾</button>
+					<div class="extra-info" style="display: none;">
+						<p>
+							We employ a decoupled control framework for the thrust control of rocket engines in which a 
+							Control Barrier Function (CBF) based Quadratic Program (QP) acts as a lightweight safety filter 
+							that enforces state constraints. Our main contribution is a control affine formulation 
+							of the dynamics of a pressure-fed rocket engine, enabling the application of CBF-QP safety filters 
+							to render arbitrary control policies safe with respect to operational limits. To demonstrate this, 
+							we synthesize a Deep Neural Network (DNN) policy via imitation learning of a 
+							setpoint-tracking Nonlinear Model Predictive Controller (NMPC). The DNN closely mimics 
+							NMPC tracking performance. The CBF-QP safety filter prevents operational limit violations 
+							without degrading steady-state tracking performance, at the cost of slower transient response.
+						</p>
+					</div>
+				</div>
+            </div>
 			
 			<!-- IAC25 -->
             <div class="cv-entry">
@@ -337,7 +461,7 @@
 						Authors: Ebert F., Manfletti C.
 					</div>
 					<div class="subtitle">
-						International Astronautical Congress
+						International Astronautical Congress (IAC)
 					</div>
 					<button class="toggle-btn" data-label="Abstract" onclick="toggleInfo(this)">Abstract ▾</button>
 					<div class="extra-info" style="display: none;">
