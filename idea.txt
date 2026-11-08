@@ -1,0 +1,7 @@
+run animation with controller on home page
+
+use c++ for the backend -> export it somehow (forgot what it is called (wasp?))
+
+deploy via js
+
+animation in js
